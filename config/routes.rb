@@ -1,36 +1,10 @@
 Rails.application.routes.draw do
-  get 'subjects/index'
-  get 'subjects/show'
-  get 'subjects/create'
-  get 'subjects/update'
-  get 'subjects/delete'
-  get 'school_years/index'
-  get 'school_years/show'
-  get 'school_years/create'
-  get 'school_years/update'
-  get 'school_years/delete'
-  get 'school_classes/index'
-  get 'school_classes/show'
-  get 'school_classes/create'
-  get 'school_classes/update'
-  get 'school_classes/delete'
-  get 'departments/index'
-  get 'departments/show'
-  get 'departments/create'
-  get 'departments/update'
-  get 'departments/delete'
-  get 'courses/index'
-  get 'courses/show'
-  get 'courses/create'
-  get 'courses/update'
-  get 'courses/delete'
-  get 'users/index'
-  get 'users/show'
-  get 'users/create'
-  get 'users/update'
-  get 'users/delete'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  post 'auth/login'
+  post 'auth/signup'
+  resources :users
+  resources :subjects
+  resources :school_years
+  resources :school_classes
+  resources :departments
+  resources :courses
 end
