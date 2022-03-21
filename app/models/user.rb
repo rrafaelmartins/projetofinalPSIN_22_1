@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-    
     has_secure_password
 
     validates :name, :nationality, :state, :rg, :cpf, :birth_data, :email, :password, :kind, presence: true

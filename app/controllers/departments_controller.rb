@@ -1,4 +1,8 @@
 class DepartmentsController < ApplicationController
+  before_action :verify_authenticated
+  before_action :verify_director_authenticated
+  before_action :set_department, only: [:show, :update, :destroy]
+
   def index
     @departments = Department.all
 

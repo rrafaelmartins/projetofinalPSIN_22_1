@@ -1,4 +1,9 @@
 class CoursesController < ApplicationController
+  before_action :verify_authenticated
+  before_action :verify_director_authenticated
+  before_action :set_course, only: [:show, :update, :destroy]
+
+
   def index
     @users = Course.all
 
