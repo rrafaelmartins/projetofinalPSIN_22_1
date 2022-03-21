@@ -1,16 +1,50 @@
 class UsersController < ApplicationController
   def index
+    @users = User.all
+
+    render json: @users
   end
 
   def show
+    set_user
+
+    render json: @user
   end
 
   def create
+    @user = User.new(user_params)
+
+    if @user.save
+      render json: @user
+    else
+      render json: @user.errors, status: 422
+    end
+
   end
 
   def update
+    set_user
+
+    if @user.update(user_params)
+      render json: @user
+    else
+      render json: @user.errors, status: 422
+    end
+
   end
 
-  def delete
+  def destroy
+    @user.destroy
   end
+
+  private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+  
+  def user_params
+    params.require(:user).permit(:name, :email, :gender, :phone, :password, :kind)
+  end
+
 end
