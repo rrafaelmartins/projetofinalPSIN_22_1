@@ -25,7 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_21_152856) do
 
   create_table "departments", force: :cascade do |t|
     t.string "name"
-    t.string "area_knowledge"
+    t.string "knowledge_area"
     t.integer "department_code"
     t.string "department_campus"
     t.datetime "created_at", null: false
@@ -52,7 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_21_152856) do
   create_table "subjects", force: :cascade do |t|
     t.string "name"
     t.integer "hours"
-    t.string "area_knowledge"
+    t.string "knowledge_area"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
