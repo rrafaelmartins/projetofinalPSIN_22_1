@@ -5,7 +5,7 @@ class CoursesController < ApplicationController
 
 
   def index
-    @users = Course.all
+    @courses = Course.all
 
     render json: @courses
   end
@@ -49,7 +49,7 @@ class CoursesController < ApplicationController
   end
   
   def course_params
-    params.require(:course).permit(:name, :area_knowledge, :code, :campus_course)
+    params.require(:course).permit(:name, :area_knowledge, :course_code, :course_campus)
   end
 
 end
