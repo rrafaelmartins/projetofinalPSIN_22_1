@@ -1,4 +1,8 @@
 class SubjectsController < ApplicationController
+  before_action :verify_authenticated
+  before_action :verify_department_coordinator_authenticated
+  before_action :set_subject, only: [:show, :update, :destroy]
+  
   def index
     @subjects = Subject.all
 
