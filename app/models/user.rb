@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_many :school_classes
     has_many :subjects
+    has_many :
 
     has_secure_password
 
