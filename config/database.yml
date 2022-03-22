@@ -21,7 +21,11 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
   host: 'localhost'
+<<<<<<< HEAD
   username: 'serrano'
+=======
+  username: 'postgres'
+>>>>>>> b68becae99e5efacc736791a7c3b461a410c024d
   password: '123'
 
 development:
