@@ -1,4 +1,8 @@
 class SubjectsController < ApplicationController
+  before_action :verify_authenticated
+  before_action :verify_department_coordinator_authenticated
+  before_action :set_subject, only: [:show, :update, :destroy]
+  
   def index
     @subjects = Subject.all
 
@@ -44,7 +48,7 @@ class SubjectsController < ApplicationController
   end
   
   def subject_params
-    params.require(:subject).permit(:name, :hours, :knowledge_area)
+    params.require(:subject).permit(:name, :hours, :area_knowledge)
   end
 
 end
