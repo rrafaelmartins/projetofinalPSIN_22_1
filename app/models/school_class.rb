@@ -1,3 +1,3 @@
 class SchoolClass < ApplicationRecord
-    validates :places, presence: true, inclusion: {in: 1..45}
+    belongs_to :user
 end
