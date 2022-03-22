@@ -12,6 +12,10 @@ class ApplicationController < ActionController::API
         render json: {message: "Acesso Negado"}, status: 403 and return unless current_user.director?
     end
 
+    def verify_course_coordinator_authenticated
+        render json: {message: "Acesso Negado"}, status: 403 and return unless current_user.course_coordinator?
+    end
+
     def headers
         request.headers
     end

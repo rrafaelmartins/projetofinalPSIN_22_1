@@ -4,6 +4,8 @@ class User < ApplicationRecord
     validates :name, :nationality, :state, :rg, :cpf, :birth_data, :email, :password, :kind, presence: true
     validates :email, :rg, :cpf, uniqueness: true
 
+
+
     enum kind:{
         'director': 0,
         'department_coordinator': 1,
