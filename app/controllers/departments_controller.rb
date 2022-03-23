@@ -1,5 +1,5 @@
 class DepartmentsController < ApplicationController
-  before_action :verify_authenticated
+  # before_action :verify_authenticated
   # before_action :verify_director_authenticated
   before_action :set_department, only: [:show, :update, :destroy]
 
@@ -14,7 +14,7 @@ class DepartmentsController < ApplicationController
   end
 
   def create
-    @department = current_user.departments.build(department_params)
+    @department = Department.new(department_params)
 
     if @department.save
       render json: @department

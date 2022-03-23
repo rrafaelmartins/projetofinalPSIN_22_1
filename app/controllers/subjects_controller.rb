@@ -1,5 +1,5 @@
 class SubjectsController < ApplicationController
-  before_action :verify_authenticated
+  # before_action :verify_authenticated
   # before_action :verify_department_coordinator_authenticated
   before_action :set_subject, only: [:show, :update, :destroy]
   
@@ -14,7 +14,7 @@ class SubjectsController < ApplicationController
   end
 
   def create
-    @subject = current_user.subjects.build(subject_params)
+    @subject = Subject.new(subject_params)
 
     if @subject.save
       render json: @subject
@@ -45,7 +45,7 @@ class SubjectsController < ApplicationController
   end
   
   def subject_params
-    params.require(:subject).permit(:name, :hours, :area_knowledge, :user_id)
+    params.require(:subject).permit(:name, :hours, :area_knowledge)
   end
 
 end

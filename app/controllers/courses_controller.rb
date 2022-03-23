@@ -18,7 +18,7 @@ class CoursesController < ApplicationController
   end
 
   def create
-    @course = current_user.courses.build(course_params)
+    @course = Course.new(course_params)
 
     if @course.save
       render json: @course

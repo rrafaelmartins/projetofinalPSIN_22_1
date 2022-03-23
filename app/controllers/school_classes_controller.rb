@@ -40,11 +40,11 @@ class SchoolClassesController < ApplicationController
   private
 
   def set_school_class
-    @school_class = current_user.school_classes.find(params[:id])
+    @school_class = SchoolClass.find(params[:id])
   end
   
   def school_class_params
-    params.require(:school_class).permit(:name, :class_code, :calendar, :class_room, :user_id)
+    params.require(:school_class).permit(:name, :class_code, :calendar, :class_room)
   end
 
 end
