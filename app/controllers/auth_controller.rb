@@ -30,7 +30,7 @@ class AuthController < ApplicationController
   end
 
   def login_params
-    params.require(:user).permit(:cpf, :password)
+    params.require(:user).permit(:email, :password)
   end
 end
 
