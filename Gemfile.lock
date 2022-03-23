@@ -46,6 +46,14 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+<<<<<<< HEAD
+=======
+    active_model_serializers (0.10.13)
+      actionpack (>= 4.1, < 7.1)
+      activemodel (>= 4.1, < 7.1)
+      case_transform (>= 0.2)
+      jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
+>>>>>>> 09ff5809aa7984d68ff31a3a7e070eedc38ab20d
     activejob (7.0.2.3)
       activesupport (= 7.0.2.3)
       globalid (>= 0.3.6)
@@ -66,10 +74,21 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+<<<<<<< HEAD
     bootsnap (1.11.1)
       msgpack (~> 1.2)
     builder (3.2.4)
     concurrent-ruby (1.1.10)
+=======
+    bcrypt (3.1.17)
+    bootsnap (1.11.1)
+      msgpack (~> 1.2)
+    builder (3.2.4)
+    cancancan (3.3.0)
+    case_transform (0.2)
+      activesupport
+    concurrent-ruby (1.1.9)
+>>>>>>> 09ff5809aa7984d68ff31a3a7e070eedc38ab20d
     crass (1.0.6)
     debug (1.4.0)
       irb (>= 1.3.6)
@@ -84,6 +103,11 @@ GEM
     io-wait (0.2.1)
     irb (1.4.1)
       reline (>= 0.3.0)
+<<<<<<< HEAD
+=======
+    jsonapi-renderer (0.2.2)
+    jwt (2.3.0)
+>>>>>>> 09ff5809aa7984d68ff31a3a7e070eedc38ab20d
     loofah (2.15.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -117,6 +141,11 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.3)
+<<<<<<< HEAD
+=======
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
+>>>>>>> 09ff5809aa7984d68ff31a3a7e070eedc38ab20d
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (7.0.2.3)
@@ -162,10 +191,22 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+<<<<<<< HEAD
   bootsnap
   debug
   pg (~> 1.1)
   puma (~> 5.0)
+=======
+  active_model_serializers
+  bcrypt (~> 3.1.7)
+  bootsnap
+  cancancan
+  debug
+  jwt
+  pg (~> 1.1)
+  puma (~> 5.0)
+  rack-cors
+>>>>>>> 09ff5809aa7984d68ff31a3a7e070eedc38ab20d
   rails (~> 7.0.2, >= 7.0.2.3)
   tzinfo-data
 
