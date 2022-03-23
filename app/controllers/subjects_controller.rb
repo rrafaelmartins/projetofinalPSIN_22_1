@@ -1,6 +1,6 @@
 class SubjectsController < ApplicationController
   before_action :verify_authenticated
-  before_action :verify_department_coordinator_authenticated
+  # before_action :verify_department_coordinator_authenticated
   before_action :set_subject, only: [:show, :update, :destroy]
   
   def index
@@ -10,13 +10,11 @@ class SubjectsController < ApplicationController
   end
 
   def show
-    set_subject
-
     render json: @subject
   end
 
   def create
-    @subject = Subject.new(subject_params)
+    @subject = current_user.subjects.build(subject_params)
 
     if @subject.save
       render json: @subject
@@ -27,7 +25,6 @@ class SubjectsController < ApplicationController
   end
 
   def update
-    set_subject
 
     if @subject.update(subject_params)
       render json: @subject

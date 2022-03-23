@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   post 'auth/login'
   post 'auth/signup'
-  resources :users
+  resource :user
   resources :subjects
   resources :school_years
   resources :school_classes

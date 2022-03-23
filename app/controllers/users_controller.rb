@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :verify_authenticated
+  # before_action :verify_authenticated
   before_action :set_user, only: [:show, :update, :destroy]
   
   def index
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    set_user
+
 
     render json: @user
   end
@@ -26,7 +26,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    set_user
 
     if @user.update(user_params)
       render json: @user
@@ -43,7 +42,7 @@ class UsersController < ApplicationController
   private
 
   def set_user
-    @user = User.find(params[:id])
+    @user = current_user
   end
   
   def user_params

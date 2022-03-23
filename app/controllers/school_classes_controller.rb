@@ -1,6 +1,6 @@
 class SchoolClassesController < ApplicationController
   before_action :verify_authenticated
-  before_action :verify_department_coordinator_authenticated
+  # before_action :verify_department_coordinator_authenticated
   before_action :set_school_class, only: [:show, :update, :destroy]
 
   def index
@@ -10,13 +10,11 @@ class SchoolClassesController < ApplicationController
   end
 
   def show
-    set_school_class
-
     render json: @school_class
   end
 
   def create
-    @school_class = SchoolClass.new(school_class_params)
+    @school_class = current_user.school_classes.build(school_class_params)
 
     if @school_class.save
       render json: @school_class
@@ -27,8 +25,6 @@ class SchoolClassesController < ApplicationController
   end
 
   def update
-    set_school_class
-
     if @school_class.update(school_class_params)
       render json: @school_class
     else
@@ -44,7 +40,7 @@ class SchoolClassesController < ApplicationController
   private
 
   def set_school_class
-    @school_class = SchoolClass.find(params[:id])
+    @school_class = current_user.school_classes.find(params[:id])
   end
   
   def school_class_params
