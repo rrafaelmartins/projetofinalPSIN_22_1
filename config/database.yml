@@ -21,7 +21,11 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
   host: 'localhost'
+<<<<<<< HEAD
   username: 'postgres'
+=======
+  username: 'rrafaelmartins'
+>>>>>>> 6ac9891f2fb4e97023691f34fc1b2bdfb52ad4e6
   password: '123'
 
 development:
@@ -32,7 +36,7 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: projeto_final
+  #username: projeto_final_2
 
   # The password associated with the postgres role (username).
   #password:
