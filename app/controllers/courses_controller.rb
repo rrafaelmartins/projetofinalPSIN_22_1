@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
   before_action :verify_authenticated
-  before_action :verify_director_authenticated
-  before_action :verify_course_coordinator_authenticated 
+  # before_action :verify_director_authenticated
+  # before_action :verify_course_coordinator_authenticated 
   before_action :set_course, only: [:show, :update, :destroy]
 
 
@@ -46,7 +46,7 @@ class CoursesController < ApplicationController
   private
 
   def set_course
-    @course = Course.find(params[:id])
+    @course = current_user.courses.find(params[:id])
   end
   
   def course_params

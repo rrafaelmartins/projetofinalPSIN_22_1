@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_22_192731) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_21_152856) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,8 +21,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_22_192731) do
     t.string "course_campus"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "department_id", null: false
-    t.index ["department_id"], name: "index_courses_on_department_id"
   end
 
   create_table "departments", force: :cascade do |t|
@@ -41,8 +39,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_22_192731) do
     t.string "class_room"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_school_classes_on_user_id"
   end
 
   create_table "school_years", force: :cascade do |t|
@@ -51,8 +47,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_22_192731) do
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
-    t.index ["user_id"], name: "index_school_years_on_user_id"
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -61,8 +55,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_22_192731) do
     t.string "area_knowledge"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_subjects_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -77,13 +69,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_22_192731) do
     t.integer "kind"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "department_id", null: false
-    t.index ["department_id"], name: "index_users_on_department_id"
   end
 
-  add_foreign_key "courses", "departments"
-  add_foreign_key "school_classes", "users"
-  add_foreign_key "school_years", "users"
-  add_foreign_key "subjects", "users"
-  add_foreign_key "users", "departments"
 end

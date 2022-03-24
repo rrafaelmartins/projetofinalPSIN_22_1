@@ -10,8 +10,6 @@ class DepartmentsController < ApplicationController
   end
 
   def show
-    set_department
-
     render json: @department
   end
 
@@ -27,7 +25,6 @@ class DepartmentsController < ApplicationController
   end
 
   def update
-    set_department
 
     if @department.update(department_params)
       render json: @department
@@ -44,7 +41,7 @@ class DepartmentsController < ApplicationController
   private
 
   def set_department
-    @department = Department.find(params[:id])
+    @department = current_user.departments.find(params[:id])
   end
   
   def department_params

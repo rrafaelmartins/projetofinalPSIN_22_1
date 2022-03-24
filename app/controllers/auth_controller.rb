@@ -1,7 +1,7 @@
 class AuthController < ApplicationController
   
   def login
-    @user = User.find_by!(email: login_params[:email])
+    @user = User.find_by!(cpf: login_params[:cpf])
 
     if @user.authenticate(login_params[:password])
       
@@ -30,7 +30,7 @@ class AuthController < ApplicationController
   end
 
   def login_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:cpf, :password)
   end
 end
 
