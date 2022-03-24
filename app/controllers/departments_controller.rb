@@ -41,7 +41,7 @@ class DepartmentsController < ApplicationController
   private
 
   def set_department
-    @department = current_user.departments.find(params[:id])
+    @department = Department.find(params[:id])
   end
   
   def department_params
