@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :verify_authenticated
+  #before_action :verify_authenticated
   # before_action :verify_director_authenticated
   # before_action :verify_course_coordinator_authenticated 
   before_action :set_course, only: [:show, :update, :destroy]
@@ -50,7 +50,7 @@ class CoursesController < ApplicationController
   end
   
   def course_params
-    params.require(:course).permit(:name, :area_knowledge, :course_code, :course_campus)
+    params.require(:course).permit(:name, :area_knowledge, :course_code, :course_campus, :department_id)
   end
 
 end
