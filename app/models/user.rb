@@ -2,7 +2,7 @@ class User < ApplicationRecord
     has_many :school_classes
     has_many :subjects
     has_many :school_years
-    belongs_to :department
+    # belongs_to :department
 
     has_secure_password
 
