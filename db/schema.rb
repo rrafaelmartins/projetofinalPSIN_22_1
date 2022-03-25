@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_24_193628) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_23_141006) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,8 +22,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_24_193628) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
-    t.bigint "department_id", null: false
-    t.index ["department_id"], name: "index_courses_on_department_id"
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
@@ -35,6 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_24_193628) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "subject_id"
+    t.bigint "user_id"
     t.index ["subject_id"], name: "index_departments_on_subject_id"
   end
 
@@ -65,8 +64,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_24_193628) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.bigint "department_id"
-    t.index ["department_id"], name: "index_subjects_on_department_id"
     t.index ["user_id"], name: "index_subjects_on_user_id"
   end
 
@@ -82,18 +79,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_24_193628) do
     t.integer "kind"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "course_id"
-    t.bigint "department_id"
-    t.index ["course_id"], name: "index_users_on_course_id"
-    t.index ["department_id"], name: "index_users_on_department_id"
   end
 
-  add_foreign_key "courses", "departments"
   add_foreign_key "courses", "users"
   add_foreign_key "departments", "subjects"
   add_foreign_key "school_classes", "users"
-  add_foreign_key "subjects", "departments"
   add_foreign_key "subjects", "users"
-  add_foreign_key "users", "courses"
-  add_foreign_key "users", "departments"
 end
