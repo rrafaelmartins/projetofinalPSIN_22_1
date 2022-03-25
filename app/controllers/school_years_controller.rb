@@ -14,7 +14,7 @@ class SchoolYearsController < ApplicationController
   end
 
   def create
-    @school_year = current_user.school_years.build(school_year_params)
+    @school_year = SchoolYear.new(school_year_params)
 
     if @school_year.save
       render json: @school_year
@@ -42,7 +42,7 @@ class SchoolYearsController < ApplicationController
   private
 
   def set_school_year
-    @school_year = School_Year.find(params[:id])
+    @school_year = SchoolYear.find(params[:id])
   end
   
   def school_year_params
