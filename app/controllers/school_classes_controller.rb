@@ -1,5 +1,5 @@
 class SchoolClassesController < ApplicationController
-  before_action :verify_authenticated
+  #before_action :verify_authenticated
   # before_action :verify_department_coordinator_authenticated
   before_action :set_school_class, only: [:show, :update, :destroy]
 
@@ -40,7 +40,7 @@ class SchoolClassesController < ApplicationController
   private
 
   def set_school_class
-    @school_class = SchoolClass.find(params[:id])
+    @school_class = School_Class.find(params[:id])
   end
   
   def school_class_params

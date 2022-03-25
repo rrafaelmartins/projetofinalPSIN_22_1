@@ -1,5 +1,5 @@
 class SchoolYearsController < ApplicationController
-  before_action :verify_authenticated
+  #before_action :verify_authenticated
   # before_action :verify_director_authenticated
   before_action :set_school_year, only: [:show, :update, :destroy]
 
@@ -42,7 +42,7 @@ class SchoolYearsController < ApplicationController
   private
 
   def set_school_year
-    @school_year = current_user.school_years.find(params[:id])
+    @school_year = School_Year.find(params[:id])
   end
   
   def school_year_params
