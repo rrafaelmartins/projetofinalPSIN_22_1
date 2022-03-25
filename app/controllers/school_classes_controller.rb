@@ -14,7 +14,7 @@ class SchoolClassesController < ApplicationController
   end
 
   def create
-    @school_class = current_user.school_classes.build(school_class_params)
+    @school_class = SchoolClass.new(school_class_params)
 
     if @school_class.save
       render json: @school_class
