@@ -1,6 +1,5 @@
 class User < ApplicationRecord
     belongs_to :course
-    belongs_to :department
 
     has_secure_password
 
