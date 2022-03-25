@@ -40,7 +40,7 @@ class SchoolClassesController < ApplicationController
   private
 
   def set_school_class
-    @school_class = School_Class.find(params[:id])
+    @school_class = SchoolClass.find(params[:id])
   end
   
   def school_class_params
