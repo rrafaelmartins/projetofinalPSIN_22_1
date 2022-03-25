@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :school_classes
   resources :departments
   resources :courses
+  delete 'courses/:id', to: 'courses#destroy'
 end
