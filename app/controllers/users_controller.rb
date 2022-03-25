@@ -9,8 +9,6 @@ class UsersController < ApplicationController
   end
 
   def show
-
-
     render json: @user
   end
 
