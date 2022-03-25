@@ -81,8 +81,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_23_141006) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "courses", "users"
-  add_foreign_key "departments", "subjects"
-  add_foreign_key "school_classes", "users"
-  add_foreign_key "subjects", "users"
 end
