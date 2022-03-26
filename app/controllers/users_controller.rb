@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  # before_action :verify_authenticated
+  before_action :verify_authenticated, only: [:create, :update, :destroy]
+  before_action :verify_director_authenticated, only: [:create, :update, :destroy]
   before_action :set_user, only: [:show, :update, :destroy]
   
   def index
